@@ -33,7 +33,7 @@
 
       color: $title;
       border-bottom: 1px solid $title;
-
+      @extend %rubik-700;
 
     }
   }
