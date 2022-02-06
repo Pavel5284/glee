@@ -264,4 +264,51 @@ margin: 0 75px;
   }
 }
 
+.advantage{
+  margin: 0 75px;
+  background-color: #fef7f0;
+  padding: 45px 145px 45px 145+80px;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item{
+    max-width: 230px;
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      width: 52px;
+      height: 54px;
+      left: -74px;
+      top: 13px;
+    }
+  }
+  &__item-24::before{
+      background-image: url("../images/24h.png");
+  }
+  &__item-delivery::before{
+    width: 55px;
+    height: 37px;
+    background-image: url("../images/delivery.png");
+  }
+  &__item-card::before{
+    width: 54px;
+    height: 53px;
+    background-image: url("../images/credit-card.png");
+  }
+
+  &__title{
+    @extend %dmsans-700;
+    font-size: 18px;
+    line-height: 40px;
+  }
+  &__text{
+    @extend %dmsans-400;
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
 @import "media";
