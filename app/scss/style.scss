@@ -68,8 +68,6 @@
     margin: 0 25px;
 
     border-radius: 50%;
-
-    //position: relative;
   }
   &__sales-link-heart{
     padding: 20px 40px;
@@ -78,11 +76,20 @@
     border-radius: 50px 0 0 50px;
   }
   &__sales-link-basket{
-    border-left: 1px solid #fde7d3;
     padding: 20px 40px;
     background-color: #fcd7b6;
     margin: 0;
     border-radius: 0 50px 50px 0;
+    position: relative;
+  }
+  .user-nav__sales-link-basket::before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 32px;
+    background-color: #fde7d3;
+    left: 0;
+    top: 14px;
   }
   &__num{
     position: absolute;
@@ -308,6 +315,293 @@ margin: 0 75px;
     @extend %dmsans-400;
     font-size: 16px;
     line-height: 30px;
+  }
+}
+
+.product {
+  padding: 100px 0 190px;
+
+  &__top {
+    text-align: center;
+  }
+
+  &__title {
+    @extend %dmsans-700;
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 40px;
+    color: $title;
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 80px;
+    color: #8b8b8b;
+    @extend %dmsans-700;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+   // margin-bottom: 40px;
+    //box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+  }
+}
+  .product-item{
+    min-width: 270px;
+    height: 380px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+    text-align: center;
+    margin-bottom: 40px;
+    &__img-box{
+      position: relative;
+      padding-bottom: 75px;
+      overflow: hidden;
+    }
+    &__image{
+      margin: auto;
+      padding-top: 25px;
+    }
+    &__title{
+@extend %dmsans-500;
+      font-size: 16px;
+      line-height: 30px;
+      color: #243f4d;
+    }
+    &__price{
+      @extend %dmsans-700;
+      font-size: 16px;
+      line-height: 30px;
+      color: #a3bbc8;
+    }
+  &:hover{
+    .product-item__link-box{
+      transform: translateY(0);
+    }
+  }
+  }
+.product-item__link-box{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(300%);
+  transition: all .3s;
+  :hover{
+    background-color: #a3bbc8;
+    path{
+      fill: #fff;
+    }
+  }
+}
+.product-item__link{
+  margin-right:12px;
+  margin-left: 12px;
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+  padding: 11px;
+  transition: all .3s;
+
+}
+
+
+.lamp{
+  max-width: 1770px;
+  margin: 0 auto 100px;
+  &__items{
+    display: flex;
+    justify-content:space-between ;
+  }
+  &__item{
+    max-width: 870px;
+    height: 390px;
+    background-color: #feefe2;
+  }
+  &__item-inner{
+    padding: 100px 145px  100px 385px;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 233px;
+      height: 405px;
+      background-image: url("../images/product/lamp-1.png");
+      left: 130px;
+      top: -90px;
+    }
+  }
+  &__item-inner--2{
+    &::after{
+      background-image: url("../images/product/lamp-2.png");
+    }
+  }
+  &__title{
+    @extend %dmsans-700;
+    font-size: 26px;
+    line-height: 32px;
+    color: #243f4d;
+    margin-bottom: 25px;
+  }
+  &__text{
+    @extend %rubik-400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #243f4d;
+    margin-bottom: 30px;
+  }
+  &__link{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 180px;
+    height: 60px;
+    border: 1px solid #b3b7b5;
+    color: #436372;
+    border-radius: 5px;
+
+    @extend %rubik-500;
+    font-size: 15px;
+    line-height: 20px;
+    svg{
+      path{
+        fill: #436372;
+      }
+    }
+  }
+}
+
+.design{
+  margin-bottom: 120px;
+  &__items{
+display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  &__item{
+    width: 370px;
+    height: 245px;
+    padding: 40px 160px 0 35px;
+  }
+  &-item__title{
+    @extend %dmsans-700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+  }
+  &-item__category{
+    @extend %dmsans-700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #a9bfcb;
+  }
+}
+
+.video-design{
+margin-bottom: 110px;
+  &__popup{
+    max-width: 100%;
+    height: 501px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.news{
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -100px;
+  }
+  &__top-title{
+    @extend %dmsans-700;
+    font-size: 36px;
+    line-height: 40px;
+    color: #1a1a1a;
+  }
+  &__top-link{
+    @extend %dmsans-700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #262626;
+    margin-right: 25px;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 7px;
+      height: 12px;
+      background-image: url("../images/icons/angle-right.svg");
+      right: -20px;
+      top: 3px;
+    }
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(169px);
+  }
+  &__item{
+    width: 370px;
+    height: 420px;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+    background-color: #fff;
+  }
+  &__item-text-wrapper{
+    margin: 35px 27px 55px 30px;
+  }
+  &__item-text{
+    @extend %dmsans-500;
+    font-size: 18px;
+    line-height: 24px;
+    height: 85px;
+  }
+  &__item-info{
+    display: flex;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+  &__item-info-date{
+    @extend %rubik-400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #222933;
+    margin-right: 30px;
+  }
+  &__item-info-author{
+    @extend %rubik-400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #222933;
+  }
+}
+
+.partners{
+  background-color: #fef7f0;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 250px;
+    padding-bottom: 90px;
   }
 }
 
