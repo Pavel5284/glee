@@ -808,4 +808,42 @@ margin-bottom: 110px;
   }
 }
 
+.terms{
+  color: #243f4d;
+  margin-bottom: 115px;
+&__title{
+  @extend %rubik-500;
+  font-size: 24px;
+  line-height: 40px;
+  margin-bottom: 35px;
+}
+  &__list{
+    list-style-type: none; /* Убираем исходные маркеры */
+    counter-reset:  item; /* Обнуляем счетчик списка */
+    margin-bottom: 75px;
+    li:nth-child(-n+9)::before {
+      content: '0' counter(item) '.';
+      counter-increment: item; /* Задаём имя счетчика */
+    }
+  }
+  &__list-item{
+    @extend %rubik-400;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
+    margin-bottom: 30px;
+    p{
+      padding-left: 10px;
+    }
+  }
+  &__text{
+    margin-bottom: 75px;
+  }
+
+
+}
+
 @import "media";
+
+
+
