@@ -909,7 +909,90 @@ margin-bottom: 110px;
   }
 }
 
+.product-page{
+  &__aside{
+    max-width: 270px;
+  }
+}
+
+.filter-category{
+  &__form{
+
+  }
+  &__label{
+    cursor: pointer;
+  }
+  &__input{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    &:checked + .filter-category__checkbox {
+      background-color: #edf1f4;
+      border-radius: 5px;
+    }
+  }
+  &__checkbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 15px;
+    position: relative;
+    @extend %rubik-400;
+    font-size: 16px;
+  }
+}
+
+
+.filter__title{
+  @extend %dmsans-700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #243f4d;
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    background-image: url("../images/icons/filter-line.svg");
+    width: 39px;
+    height: 3px;
+    top: 10px;
+    margin-left: 16px;
+  }
+}
+
+.filter-price__label{
+  display: flex;
+  justify-content: space-between;
+}
+
+.irs--flat .irs-line{
+  height: 3px;
+  top: 30px;
+  background-color: #c2d2db;
+}
+
+.irs--flat .irs-bar{
+  height: 4px;
+  top: 30px;
+  background-color: #a3bbc8;
+}
+
+.irs--flat .irs-handle {
+  top: 24px;
+  width: 15px;
+  height: 15px;
+  background-color: #a3bbc8;
+}
+
+//.irs--flat .irs-handle>i:first-child,
+//.irs--flat .irs-handle:hover>i:first-child {
+//  display: none;
+//}
+
+
+
+
+
 @import "media";
-
-
 
